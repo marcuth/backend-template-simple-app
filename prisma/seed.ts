@@ -1,9 +1,10 @@
 import { PrismaBetterSqlite3 } from "@prisma/adapter-better-sqlite3"
-import { PrismaClient } from "@prisma/client"
 import { env } from "@marcuth/env"
 import * as bcrypt from "bcrypt"
 
 import * as crypto from "node:crypto"
+
+import { PrismaClient } from "../src/generated/prisma/client"
 
 const adapter = new PrismaBetterSqlite3({ url: env("DATABASE_URL") })
 const prisma = new PrismaClient({ adapter: adapter })
