@@ -5,13 +5,17 @@
 // Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
 
 generator client {
-    provider = "prisma-client"
+    provider     = "prisma-client"
     moduleFormat = "cjs"
-    output = "../src/generated/prisma"
+    output       = "../src/generated/prisma"
 }
 
 datasource db {
+    // Para SQLite (Padrão)
     provider = "sqlite"
+
+    // Para PostgreSQL (Comente o SQLite acima e descomente abaixo)
+    // provider = "postgresql"
 }
 
 enum UserRole {

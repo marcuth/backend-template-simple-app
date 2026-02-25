@@ -59,16 +59,35 @@ $ npm run test:cov
 
 ## Deployment
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+### Docker (Recomendado para VPS)
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+Este projeto já vem configurado com Docker e Docker Compose para facilitar a implantação em uma VPS.
 
-```bash
-$ npm install -g mau
-$ mau deploy
-```
+1. **Requisitos:**
+   - Docker e Docker Compose instalados na VPS.
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+2. **Passos para rodar:**
+   ```bash
+   # Clone o repositório na VPS
+   $ git clone <url-do-repositorio>
+   $ cd backend-simple-app
+
+   # Crie o arquivo .env baseado no .env.example
+   $ cp .env.example .env
+
+   # Suba os containers
+   $ docker-compose up -d --build
+   ```
+
+O comando acima irá:
+- Iniciar um banco de dados PostgreSQL.
+- Construir a imagem da aplicação.
+- Rodar as migrações do Prisma automaticamente.
+- Iniciar a API na porta `3003`.
+
+---
+
+Com Mau, você pode implantar sua aplicação em apenas alguns cliques, permitindo que você se concentre na construção de recursos em vez de gerenciar a infraestrutura.
 
 ## Resources
 
