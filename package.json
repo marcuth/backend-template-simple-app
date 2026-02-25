@@ -1,7 +1,7 @@
 {
-  "name": "bolierplate-backend-simple-app",
+  "name": "backend-template-simple-app",
   "version": "0.0.1",
-  "description": "Bolierplate Backend by Marcuth",
+  "description": "Backend Template Simple App by Marcuth",
   "author": "Marcuth",
   "private": true,
   "license": "UNLICENSED",
@@ -9,6 +9,7 @@
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\" \"prisma/**/*.ts\"",
     "start": "nest start",
+    "dev": "nest start --watch",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
