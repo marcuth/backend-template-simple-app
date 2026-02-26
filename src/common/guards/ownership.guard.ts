@@ -5,9 +5,11 @@ import { ResourceService } from "../interfaces/resource-service.interface"
 import { messagesHelper } from "../../helpers/messages.helper"
 import { UserRole } from "../../generated/prisma/enums"
 
+export const RESOURCE_SERVICE_KEY = "RESOURCE_SERVICE"
+
 export class OwnershipGuard<T> {
     constructor(
-        @Inject("RESOURCE_SERVICE") private readonly resourceService: ResourceService<T>,
+        @Inject(RESOURCE_SERVICE_KEY) private readonly resourceService: ResourceService<T>,
         private readonly ownerIdProperty: string,
     ) {}
 
