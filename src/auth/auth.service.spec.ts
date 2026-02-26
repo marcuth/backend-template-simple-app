@@ -1,4 +1,3 @@
-import { UnauthorizedException } from "@nestjs/common"
 import { Test, TestingModule } from "@nestjs/testing"
 import { ConfigService } from "@nestjs/config"
 import { JwtService } from "@nestjs/jwt"
