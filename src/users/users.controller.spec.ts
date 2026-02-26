@@ -1,6 +1,7 @@
 import { Test, TestingModule } from "@nestjs/testing"
 import { Reflector } from "@nestjs/core"
 
+import { RESOURCE_SERVICE_KEY } from "../common/guards/ownership.guard"
 import { UsersController } from "./users.controller"
 import { UsersService } from "./users.service"
 
@@ -21,7 +22,7 @@ describe("UsersController", () => {
             controllers: [UsersController],
             providers: [
                 { provide: UsersService, useValue: mockUsersService },
-                { provide: "RESOURCE_SERVICE", useValue: mockUsersService },
+                { provide: RESOURCE_SERVICE_KEY, useValue: mockUsersService },
                 Reflector,
             ],
         }).compile()
